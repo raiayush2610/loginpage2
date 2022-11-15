@@ -36,7 +36,7 @@ mongoose.connect('mongodb://localhost:27017/login',
 
 // app.use('/', storage)
 app.use('/', signItem);
-app.use('/Register', multer)
+// app.use('/Register', m)
 
 // Server Connetion
 app.listen(PORT, ()=> console.log("Server is conneted on port 4000"))

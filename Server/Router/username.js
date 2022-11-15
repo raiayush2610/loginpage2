@@ -24,15 +24,15 @@ router.post('/api/username',async( req, res )=>{
                               Name: req.body.Name,
                               Age: req.body.Age,
                               Birth: req.body.Birth,
-                              Profile_img: {
-                                        data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-                                        contentType: 'image/png'
-                                    },
+                              // Profile_img: {
+                              //           data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+                              //           contentType: 'image/png'
+                              //       },
                     
-                              Cover_img:{
-                                        data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-                                        contentType: 'image/png'
-                                    },      
+                              // Cover_img:{
+                              //           data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+                              //           contentType: 'image/png'
+                              //       },      
                               Email: req.body.Email,
                               Password: req.body.Password
 

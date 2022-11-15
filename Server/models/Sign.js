@@ -4,8 +4,8 @@ const usernameSchema = new mongoose.Schema({
         Name:{type: String},
         Age:{ type : Number}, 
         Birth:{ type : Date},
-        Profile_img:{type : Buffer},
-        Cover_img:{type: Buffer},
+        // Profile_img:{type : Buffer},
+        // Cover_img:{type: Buffer},
         Email:{ type : String},
         Password:{ type : String}
 
