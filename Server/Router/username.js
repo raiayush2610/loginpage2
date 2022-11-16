@@ -13,34 +13,34 @@ const router = require('express').Router();
 
 const userItem = require('../models/Sign');
 var multer = require('multer');
-  
 
+const storage =multer.diskStorage({
+      destination:(req,file,cb)=>{
+                cb(null,'./uploads/')
+      },
+      filename: (req,file,cb)=>{
+                cb(null,Date.now()+file.originalname)
+      }
+})
+const upload =multer({storage:storage})
 
-
-router.post('/api/username',async( req, res )=>{
+router.post('/api/username',upload.single('profile'),async( req, res )=>{
           try {
             console.log("post2d is workiing");
-                    const newUser = new userItem({
-                              Name: req.body.Name,
-                              Age: req.body.Age,
-                              Birth: req.body.Birth,
-                              // Profile_img: {
-                              //           data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-                              //           contentType: 'image/png'
-                              //       },
-                    
-                              // Cover_img:{
-                              //           data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-                              //           contentType: 'image/png'
-                              //       },      
-                              Email: req.body.Email,
-                              Password: req.body.Password
+            console.log(req.body);
+            //         const newUser = new userItem({
+            //                   Name: req.body.Name,
+            //                   Age: req.body.Age,
+            //                   Birth: req.body.Birth,
+            //                   Profile_img:(req.file) ? req.file.filename : null,                           
+            //                   Email: req.body.Email,
+            //                   Password: req.body.Password
 
-                    })
-                    console.log(req.body);
-                    console.log(userItem);
-                    const save = await newUser.save();
-                    res.status(200).json("Added Succefully");
+            //         })
+            //         console.log(req.body);
+            //         console.log(userItem);
+            //         const save = await newUser.save();
+            //         res.status(200).json("Added Succefully");
                                   
           } catch (error) {
                     res.json(error);                    

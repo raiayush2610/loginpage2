@@ -1,5 +1,5 @@
 POST  http://localhost:4000/api/username
-Content-Type: application/json
+Content-Type: application/x-www-form-urlencoded
 
 {
           "Name": "Ayush Rai ",
@@ -20,6 +20,6 @@ DELETE http://localhost:4000/api/usernames
 Content-Type: application/json
 
 ###
-DELETE  http://localhost:4000/api/username/63721dff29fc1ea03d041208
+DELETE  http://localhost:4000/api/username/63730faee6cd18f1605117d7
 Content-Type: application/json
 
